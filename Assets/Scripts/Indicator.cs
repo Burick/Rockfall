@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Получить доступ к классам UI
-using UnityEngine.UI;
+using UnityEngine.UI; 
 
 public class Indicator : MonoBehaviour
 {
     // Отслеживаемый объект.
+    [Header("Отслеживаемый объект(target)")]
     public Transform target;
 
     // Расстояние от 'target' до данного объекта.
+    [Header("Расстояние от 'target' до данного объекта")]
     public Transform showDistanceTo;
 
     // Надпись для отображения расстояния.
+    [Header("Надпись для отображения расстояния")]
     public Text distanceLabel;
 
     // Расстояние от края экрана.
+    [Header("Расстояние от края экрана")]
     public int margin = 50;
 
     // Цвет оттенка изображения.
