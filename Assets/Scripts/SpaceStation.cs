@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class SpaceStation : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        IndicatorManager.instance.AddIndicator(
+            gameObject,
+            Color.green
+        );
     }
 }
