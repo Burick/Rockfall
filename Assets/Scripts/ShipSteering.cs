@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipSteering : MonoBehaviour {
-// Скорость поворота корабля
+public class ShipSteering : MonoBehaviour
+{
+    // Скорость поворота корабля
+    [Header("Скорость поворота корабля")]
     public float turnRate = 6.0f;
-// Сила выравнивания корабля
+
+    // Сила выравнивания корабля
+    [Header("Сила выравнивания корабля")]
     public float levelDamping = 1.0f;
-    void Update () {
+
+    void Update()
+    {
 // Создать новый поворот, умножив вектор направления джойстика
 // на turnRate, и ограничить величиной 90 % от половины круга.
 // Сначала получить ввод пользователя.
