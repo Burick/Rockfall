@@ -19,14 +19,14 @@ public class DamageTaking : MonoBehaviour
     public void TakeDamage(int amount)
     {
 // Сообщить о попадании в текущий объект
-        Debug.Log(gameObject.name + " damaged!");
+        Debug.Log(gameObject.name + "damaged!");
 // Вычесть amount из числа очков прочности
         hitPoints -= amount;
 // Очки исчерпаны?
         if (hitPoints <= 0)
         {
 // Зафиксировать этот факт
-            Debug.Log(gameObject.name + " destroyed!");
+            Debug.Log(gameObject.name + "destroyed!");
 // Удалить себя из игры
             Destroy(gameObject);
 // Задан шаблон для создания объекта в точке разрушения?
@@ -36,6 +36,13 @@ public class DamageTaking : MonoBehaviour
 // с текущей ориентацией.
                 Instantiate(destructionPrefab,
                     transform.position, transform.rotation);
+            }
+
+            // Если требуется завершить игру, вызвать
+            // метод GameOver класса GameManager.
+            if (gameOverOnDestroyed == true)
+            {
+                GameManager.instance.GameOver();
             }
         }
     }
